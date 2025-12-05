@@ -691,6 +691,115 @@
   max-height: calc(100vh - 120px);
   overflow-y: auto;
 }
+
+/* ------------------------------ */
+/* RESPONSIVE FIXES FOR MOBILE    */
+/* ------------------------------ */
+
+/* Allow natural vertical scrolling on mobile */
+body {
+  overflow-y: auto !important;
+  height: auto !important;
+}
+
+/* Slides should size naturally, scroll when needed */
+.slide {
+  height: auto !important;
+  min-height: 100vh;
+  display: none;
+  flex-direction: column;
+}
+
+/* Active slide behaves normally */
+.slide.active {
+  display: flex;
+}
+
+/* Generic scroll fix */
+.slide.scrollable,
+.slide.scrollable .slide-content {
+  overflow-y: visible !important;
+  max-height: none !important;
+}
+
+/* Hero section: remove rigid 45% height */
+.hero-section {
+  height: auto !important;
+  min-height: 220px;
+}
+
+/* Ensure SVG scales correctly on narrow screens */
+.hero-svg {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Title block scales better */
+.title-block {
+  max-width: 92%;
+  padding: 6% 6%;
+}
+
+/* Navigation fixes */
+.navigation {
+  position: relative;
+  height: auto;
+  padding: 12px 20px;
+}
+
+.nav-button {
+  padding: 8px 14px;
+  font-size: 14px;
+}
+
+/* Grids become single-column on small screens */
+@media (max-width: 768px) {
+
+  .stakeholder-grid,
+  .donor-grid,
+  .partners-grid {
+    grid-template-columns: repeat(1, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .stakeholder-card,
+  .donor-card,
+  .partner-card {
+    padding: 18px !important;
+  }
+
+  .main-title {
+    font-size: 1.8em !important;
+  }
+
+  .main-subtitle {
+    font-size: 1.1em !important;
+  }
+
+  .slide-title {
+    font-size: 1.4em !important;
+  }
+
+  .slide-content {
+    padding: 18px 14px !important;
+  }
+
+  .comparison-table th,
+  .comparison-table td,
+  .platforms-table th,
+  .platforms-table td {
+    font-size: 0.8em !important;
+    padding: 8px !important;
+  }
+}
+
+/* Ultra-small screens (Android < 360px width) */
+@media (max-width: 360px) {
+  .main-title { font-size: 1.5em !important; }
+  .main-subtitle { font-size: 0.95em !important; }
+  .slide-title { font-size: 1.2em !important; }
+}
     
 <style>
 
@@ -1827,6 +1936,7 @@
   </script>
 </body>
 </html>
+
 
 
 
