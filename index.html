@@ -679,6 +679,19 @@
       navigation: auto;
     }
 
+/* Enable scrolling for Slide 10 only */
+#slide10 {
+  overflow-y: auto !important;
+  height: 100vh;
+  padding-bottom: 40px;
+}
+
+/* Ensure slide-content allows scrolling */
+#slide10 .slide-content {
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+    
 <style>
 
   /* existing code here... */
@@ -1504,7 +1517,7 @@
       </div>
       
 <!-- Slide 10: Partners -->
-<div class="slide scrollable">
+<div class="slide scrollable" id="slide10">
   <div class="slide-content">
 
     <div class="slide-header">
@@ -1814,6 +1827,7 @@
   </script>
 </body>
 </html>
+
 
 
 
